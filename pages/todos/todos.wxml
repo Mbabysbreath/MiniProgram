@@ -1,0 +1,38 @@
+<!--pages/todos/todos.wxml-->
+<!-- <text>pages/todos/todos.wxml</text> -->
+<view class="container">
+  <!-- 搜索添加
+  bindconfirm：可以使得按下回车键也可以添加成功 -->
+  <view class="header">
+    <image src="../../images/plus.png" bindtap="addToHandle"></image>
+    <input type="text" placeholder="Anything here..."
+            value="{{newList}}" bindinput="inputChangeHandle"
+            bindconfirm="addToHandle"/>
+  </view>
+  <!-- 如果没有待完成的任务，就不将footer中的内容显示出来 -->
+  <block wx:if="{{todos.length}}">
+    <!-- 任务列表 -->
+      <view class="todos">
+        <view class="item{{item.complated?' complated':' '}}" wx:for="{{todos}}"
+        wx:key="{{index}}" bindtap="toggleTodoHandle" data-index="{{index}}" >
+          <icon type="{{item.complated?'success':'circle'}}" size="16"></icon>
+          <text>{{item.name}}</text>
+          <icon type="clear" size="16" catchtap="removeTodoHandle" 
+                data-index="{{index}}"></icon>
+        </view>
+      </view>
+
+    <!-- 底部工具 -->
+      <view class="footer">
+        <text bindtap="toggleAllHandle">Toggle all</text>
+        <text wx:if="{{leftCount}}">{{leftCount}}{{leftCount>1?"items":"item"}} left</text>
+        <text bindtap="clearHandle2">Clear complated</text>
+      </view> 
+  </block>
+<view wx:else class="null">
+  <image src="../../images/todos.png"></image>
+  <text>空空如也~</text>
+  <text class="textSmall">开始记录自己的小日常吧</text>
+</view>
+
+</view>

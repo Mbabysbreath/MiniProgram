@@ -1,0 +1,75 @@
+/* pages/todos/todos.wxss */
+.container{
+  border-top:1rpx solid #e0e0e0;
+}
+.header{
+  display: flex;
+  /* 加四周的外距 */
+  margin: 20rpx;
+  padding: 20rpx;/*内部框文字内边距*/
+  align-items: center;/*侧轴方向对齐，图标和文字对齐*/
+  border: 1rpx solid #e0e0e0;
+ border-radius: 10rpx;/*加边框的圆角*/
+ box-shadow: 0 0 5rpx #e0e0e0;/*加引用：水平阴影 垂直阴影 阴影半径 颜色*/
+}
+.header image{
+  width:40rpx;
+  height:40rpx;
+  margin-right: 20rpx;/*图标和文字由间距*/
+}
+.todos{
+  margin: 20rpx;/*加四周的外距*/
+  border: 1rpx solid #e0e0e0;
+ border-radius: 10rpx;/*加边框的圆角*/
+ box-shadow: 0 0 5rpx #e0e0e0;/*加引用：水平阴影 垂直阴影 阴影半径 颜色*/
+}
+.todos .item{
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  border-bottom:1rpx solid #e0e0e0;
+}
+.todos .item:last-child{
+  /* 去除最后一项的底部边框 */
+  border-bottom: 0;
+}
+.todos .item text{
+  flex:1;
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  color: #444;
+}
+.todos .item.complated text{
+  color: #888;
+  /* 添加删除线 */
+  text-decoration: line-through;
+}
+.footer{
+  display: flex;
+  /* 控制元素内容之间的间距 */
+  justify-content: space-between;
+  font-size: 30rpx;
+  margin: 20rpx;
+  color: #333;
+}
+.null{
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+.null image{
+  width:100px;
+  height:100px;
+}
+.null text{
+  color:#e0e0e0;
+  font-size: 60rpx;
+}
+.null text.textSmall{
+  color:#e0e0e0;
+  font-size: 40rpx;
+}
